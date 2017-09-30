@@ -3,6 +3,10 @@
 # dependencies
 */node_modules
 
+# virtual environments
+*/env
+*/venv
+
 # testing
 */coverage
 

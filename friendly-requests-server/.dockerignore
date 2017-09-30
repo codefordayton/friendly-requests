@@ -1,0 +1,3 @@
+# See https://docs.docker.com/engine/reference/builder/#dockerignore-file for more details
+
+*/env
