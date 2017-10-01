@@ -22,6 +22,3 @@ Then open downloaded.docx.
 ## CLIENT
 
 The client app is written in React. The full README is at [it's README.md](friendly-requests-client/README.md).
-
-
-
