@@ -72,6 +72,9 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [Offline-First Considerations](#offline-first-considerations)
   - [Progressive Web App Metadata](#progressive-web-app-metadata)
 - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+- [Docker Usage](#docker-usage)
+  - [Build the Docker Image](#build-the-docker-image)
+  - [Run the Docker Image](#run-the-docker-image)
 - [Deployment](#deployment)
   - [Static Server](#static-server)
   - [Other Solutions](#other-solutions)
@@ -283,7 +286,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -1769,7 +1772,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
@@ -2158,6 +2161,45 @@ To resolve this:
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled (retaining ES6 Modules).
 2. Fork the package and publish a corrected version yourself.
 3. If the dependency is small enough, copy it to your `src/` folder and treat it as application code.
+
+## Docker Usage
+
+If you do not have Docker installed on your computer, follow the instructions here: [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
+
+### Build the Docker Image
+
+From the `friendly-requests-client` directory:
+
+```shell
+docker build -t codefordayton/friendly-requests-client .
+```
+
+If the build succeeds, you should see output similar to the following:
+```
+Successfully built 8214ed5bee38
+Successfully tagged codefordayton/friendly-requests-client:latest
+```
+
+### Run the Docker Image
+
+To start the image in a container, run the following command
+```shell
+docker run -d --rm -p 3000:80 codefordayton/friendly-requests-client
+```
+
+The `-d` flag starts the container in the background (detached mode).
+
+The `--rm` flag automatically cleans up and removes the container when it exits.
+
+The `-p` flag specificies the ports to use. In this example, port 3000 on the host (your computer) is mapped to port 80 in the Docker container.
+
+If the container started successfully, you should see a long string of digits and letters in your console, similar to:
+```shell
+785e59eb07f5e3155784761c17f12374f27e8dffd9f741518d17dcfcc2cace4c
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
 
 ## Something Missing?
 

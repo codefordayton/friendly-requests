@@ -3,7 +3,7 @@ Server to generate .docx based on a template and submitted data.
 
 1. Install prereqs with `pip install -r requirements.txt`
 2. Run with `python api.py`
-3. POST request info to get a .docx 
+3. POST request info to get a .docx
 
 Example command-line use:
 
@@ -62,4 +62,4 @@ class PrintReadyDocument(Resource):
 api.add_resource(PrintReadyDocument, '/generate')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
