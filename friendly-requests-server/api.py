@@ -23,7 +23,18 @@ app = Flask(__name__)
 api = Api(app)
 
 parser = reqparse.RequestParser()
+parser.add_argument('department_contact_name')
+parser.add_argument('department_address1')
+parser.add_argument('department_address2')
 parser.add_argument('department_name')
+parser.add_argument('copy_files', type=bool)
+parser.add_argument('request_description')
+parser.add_argument('nte_cost')
+parser.add_argument('waive_fees', type=bool)
+parser.add_argument('request_goals')
+parser.add_argument('date_needed')
+parser.add_argument('phone_number')
+parser.add_argument('requester_name')
 
 
 class PrintReadyDocument(Resource):
