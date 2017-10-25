@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import FixedMenuLayout from './containers/FixedMenuLayout';
 
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
@@ -30,13 +31,11 @@ class RequestForm extends Component {
 }
 
 class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <RequestForm/>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <FixedMenuLayout />
+    );
+  }
 }
 
 export default App;
