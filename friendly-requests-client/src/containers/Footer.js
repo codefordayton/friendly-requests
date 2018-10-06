@@ -1,7 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import { Container, Divider, Dropdown, Grid, Header, Image, List, Segment } from 'semantic-ui-react'
-import NavMenu from './NavMenu';
+import { Container, Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react'
 
 const Footer = () => (
     <Segment

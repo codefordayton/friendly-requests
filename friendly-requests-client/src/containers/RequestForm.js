@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Checkbox, Form, Input, Segment, TextArea } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Input, TextArea } from 'semantic-ui-react'
 
 class RequestForm extends Component {
     render() {
