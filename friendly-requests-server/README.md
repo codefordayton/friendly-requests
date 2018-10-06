@@ -36,7 +36,7 @@ The `-d` flag starts the container in the background (detached mode).
 
 The `--rm` flag automatically cleans up and removes the container when it exits.
 
-The `-p` flag specificies the ports to use. In this example, port 5000 on the host (your computer) is mapped to port 80 in the Docker container.
+The `-p` flag specificies the ports to use. In this example, port 5000 on the host (your computer) is mapped to port 5000 in the Docker container.
 
 If the container started successfully, you should see a long string of digits and letters in your console, similar to:
 ```shell
