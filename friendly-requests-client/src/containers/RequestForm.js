@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
-import { Button, Divider, Form, Header, Input, TextArea } from 'semantic-ui-react'
+import { Button, Form, Header, Input, Segment, TextArea } from 'semantic-ui-react'
 
 class RequestForm extends Component {
     render() {
         return (
             <div>
-              <Header as='h1'>Friendly Request Template</Header>
-               <Divider hidden />
+              <Header as='h1'>Friendly Requests Template</Header>
+              <Segment>
+                <p>
+                  Friendly Requests helps people make public record requests in the State of Ohio.
+                </p>
+                <ol>
+                  <li>Fill out the form below</li>
+                  <li>Click the "Generate Request" button</li>
+                  <li>A Microsoft Word document for your request will be created using the information provided</li>
+                </ol>
+              </Segment>
               <Form action="http://127.0.0.1:5000/generate" method="POST">
                  <Form.Field required>
                   <label>Agency/Department Contact Name</label>
