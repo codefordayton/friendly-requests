@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Accordion, Container, Icon } from 'semantic-ui-react'
+import { Accordion, Container } from 'semantic-ui-react'
+import FaqItem from '../components/FaqItem';
 
 export default class FaqPage extends Component {
-  state = { activeIndex: 0 }
+  state = { activeIndex: null }
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps
@@ -18,35 +19,22 @@ export default class FaqPage extends Component {
     return (
       <Container text style={{ marginTop: '7em' }}>
         <Accordion>
-          <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
-            <Icon name='dropdown' />
-            What does "FAQ" stand for?
-          </Accordion.Title>
-          <Accordion.Content active={activeIndex === 0}>
-            <p>
-            FAQ is an acronym for Frequently Asked Questions.  It is also sometimes used as the singular Frequently Asked Question.
-            </p>
-          </Accordion.Content>
-
-          <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick}>
-            <Icon name='dropdown' />
-            How is "FAQ" pronounced?
-          </Accordion.Title>
-          <Accordion.Content active={activeIndex === 1}>
-            <p>
-              "FAQ" is pronounced as either an initialism (F-A-Q) or an acronym.
-            </p>
-          </Accordion.Content>
-
-          <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick}>
-            <Icon name='dropdown' />
-            What do FAQs contain?
-          </Accordion.Title>
-          <Accordion.Content active={activeIndex === 2}>
-            <p>
-            FAQs are compilations of information which are [usually] the result of certain questions constantly being asked (posted) in a newsgroup - hence the name FAQ (Frequently Asked Questions).
-            </p>
-          </Accordion.Content>
+          <FaqItem index={0} activeIndex={activeIndex} handleClick={this.handleClick}
+            faqText="What is Friendly Requests?"
+            faqAnswer="Friendly Requests is a web application that helps people make public record requests in the state of Ohio."
+          />
+          <FaqItem index={1} activeIndex={activeIndex} handleClick={this.handleClick}
+            faqText="How does it work?"
+            faqAnswer={
+              <p>Fill out and submit the form on the <a href="/">Home</a> page. Friendly Requests will generate a Microsoft Word document populated with the information provided. Make additional edits or print, sign, and mail to the specified agency, department, or organization.</p>
+            }
+          />
+          <FaqItem index={2} activeIndex={activeIndex} handleClick={this.handleClick}
+            faqText="How can I suggest improvements?"
+            faqAnswer={
+              <p>Head on over to the <a href="https://github.com/codefordayton/friendly-requests/issues" target="_blank">Friendly Requests</a> project on GitHub, click the "New Issue" button, and suggest an improvement!</p>
+            }
+          />
         </Accordion>
       </Container>
 
