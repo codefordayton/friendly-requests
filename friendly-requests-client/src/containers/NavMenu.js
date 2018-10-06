@@ -13,8 +13,8 @@ const NavMenu = () => (
         />
         Friendly Requests
       </Menu.Item>
-      <Menu.Item as='a'><Link to="/">Home</Link></Menu.Item>
-      <Menu.Item as='a'><Link to="/faq">FAQ</Link></Menu.Item>
+      <Menu.Item href="/">Home</Menu.Item>
+      <Menu.Item href="/faq">FAQ</Menu.Item>
     </Container>
   </Menu>
 )
