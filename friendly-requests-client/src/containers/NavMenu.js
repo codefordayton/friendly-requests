@@ -1,6 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Container, Icon, Image, Menu } from 'semantic-ui-react'
+import { Container, Icon, Menu } from 'semantic-ui-react'
 
 const NavMenu = () => (
   <Menu fixed='top' inverted>
@@ -9,8 +8,8 @@ const NavMenu = () => (
         <Icon name='archive' size='large' />
         Friendly Requests
       </Menu.Item>
-      <Menu.Item as='a'><Link to="/">Home</Link></Menu.Item>
-      <Menu.Item as='a'><Link to="/faq">FAQ</Link></Menu.Item>
+      <Menu.Item href="/">Home</Menu.Item>
+      <Menu.Item href="/faq">FAQ</Menu.Item>
     </Container>
   </Menu>
 )

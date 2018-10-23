@@ -1,6 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Segment } from 'semantic-ui-react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavMenu from './NavMenu';
 import Footer from './Footer';
 import HomePage from './HomePage';
