@@ -3,7 +3,7 @@ Server to generate .docx based on a template and submitted data.
 
 1. Install prereqs with `pip install -r requirements.txt`
 2. Run with `python api.py`
-3. POST request info to get a .docx 
+3. POST request info to get a .docx
 
 Example command-line use:
 
@@ -23,7 +23,18 @@ app = Flask(__name__)
 api = Api(app)
 
 parser = reqparse.RequestParser()
+parser.add_argument('department_contact_name')
+parser.add_argument('department_address1')
+parser.add_argument('department_address2')
 parser.add_argument('department_name')
+parser.add_argument('copy_files', type=bool)
+parser.add_argument('request_description')
+parser.add_argument('nte_cost')
+parser.add_argument('waive_fees', type=bool)
+parser.add_argument('request_goals')
+parser.add_argument('date_needed')
+parser.add_argument('phone_number')
+parser.add_argument('requester_name')
 
 
 class PrintReadyDocument(Resource):
@@ -51,4 +62,4 @@ class PrintReadyDocument(Resource):
 api.add_resource(PrintReadyDocument, '/generate')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
