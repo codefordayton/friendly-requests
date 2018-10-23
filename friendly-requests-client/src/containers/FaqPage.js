@@ -32,7 +32,7 @@ export default class FaqPage extends Component {
           <FaqItem index={2} activeIndex={activeIndex} handleClick={this.handleClick}
             faqText="How can I suggest improvements?"
             faqAnswer={
-              <p>Head on over to the <a href="https://github.com/codefordayton/friendly-requests/issues" target="_blank">Friendly Requests</a> project on GitHub, click the "New Issue" button, and suggest an improvement!</p>
+              <p>Head on over to the <a href="https://github.com/codefordayton/friendly-requests/issues" target="_blank"  rel="noopener noreferrer">Friendly Requests</a> project on GitHub, click the "New Issue" button, and suggest an improvement!</p>
             }
           />
         </Accordion>
