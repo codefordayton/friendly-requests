@@ -14,7 +14,6 @@ const FixedMenuLayout = () => (
         <Route exact path="/" component={HomePage}/>
         <Route path="/faq" component={FaqPage}/>
 
-        <Footer />
       </div>
     </Router>
   </div>
