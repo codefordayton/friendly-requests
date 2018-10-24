@@ -13,14 +13,19 @@ Then open downloaded.docx.
 """
 
 import io
+import os
 import os.path
 
 from docxtpl import DocxTemplate
-from flask import Flask, make_response, send_file
-from flask_restful import Api, Resource, abort, reqparse
+from environs import Env
+from flask import Flask, send_file
+from flask_restful import Api, Resource, reqparse
 
 app = Flask(__name__)
 api = Api(app)
+
+env = Env()
+ENV_DEBUG = env.bool("DEBUG", False)
 
 parser = reqparse.RequestParser()
 parser.add_argument('department_contact_name')
@@ -62,4 +67,4 @@ class PrintReadyDocument(Resource):
 api.add_resource(PrintReadyDocument, '/generate')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=ENV_DEBUG, host='0.0.0.0')
