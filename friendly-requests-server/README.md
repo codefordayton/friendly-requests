@@ -29,14 +29,16 @@ Successfully tagged codefordayton/friendly-requests-server:latest
 
 To start the image in a container, run the following command
 ```shell
-docker run -d --rm -p 5000:5000 codefordayton/friendly-requests-server
+docker run -d --rm -p 5000:5000 -e DEBUG=True codefordayton/friendly-requests-server
 ```
 
 The `-d` flag starts the container in the background (detached mode).
 
 The `--rm` flag automatically cleans up and removes the container when it exits.
 
-The `-p` flag specificies the ports to use. In this example, port 5000 on the host (your computer) is mapped to port 5000 in the Docker container.
+The `-p` flag specifies the ports to use. In this example, port 5000 on the host (your computer) is mapped to port 5000 in the Docker container.
+
+The `-e` flag specifies an environment variable. In this case, debug mode is turned on. Set this value to `False` or omit the environment variable to turn debug mode off.
 
 If the container started successfully, you should see a long string of digits and letters in your console, similar to:
 ```shell

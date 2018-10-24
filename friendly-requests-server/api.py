@@ -17,13 +17,15 @@ import os
 import os.path
 
 from docxtpl import DocxTemplate
+from environs import Env
 from flask import Flask, send_file
 from flask_restful import Api, Resource, reqparse
 
 app = Flask(__name__)
 api = Api(app)
 
-ENV_DEBUG = os.environ.get("DEBUG", default=False)
+env = Env()
+ENV_DEBUG = env.bool("DEBUG", False)
 
 parser = reqparse.RequestParser()
 parser.add_argument('department_contact_name')
