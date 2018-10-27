@@ -52,6 +52,11 @@ curl -d '{"department_name":"Department of Things"}' -H "Content-Type: applicati
 
 This will download a Microsoft Word document (.docx extension), which you should be able to open and edit.
 
-### TODO
+### Run the production Docker image
 
-Update the Dockerfile to generate a production-ready Docker image.
+To start the production image in a container, run the following command
+```shell
+docker run -d --rm -p 5000:5000 codefordayton/friendly-requests-server -f Dockerfile.prod
+```
+
+This will start a container running the Flask application using uWSGI and Nginx.
