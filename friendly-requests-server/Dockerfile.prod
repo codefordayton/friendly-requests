@@ -1,0 +1,17 @@
+#
+# friendly-requests-server Dockerfile
+#
+
+FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
+MAINTAINER Code for Dayton Developers <https://github.com/codefordayton/friendly-requests>
+
+ENV LISTEN_PORT 5000
+EXPOSE 5000
+
+WORKDIR /app
+COPY ./app /app
+
+RUN apk update && \
+    apk add build-base py-lxml libxml2-dev libxslt-dev
+
+RUN pip install -r requirements.txt
